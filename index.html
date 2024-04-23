@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prisoner Management System</title>
+<title>Crime Management System</title>
 <style>
   body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-image: url('file:///C:/Users/GYAN%20BHANDAR/Downloads/photo-incandescence-infrared-lamp-closeup-home-heating-system-idea-space-heating-with-modern-electrical-appliances_166373-3462.jpg');
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,7 +21,7 @@
   .container {
     width: 400px;
     padding: 20px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
@@ -34,13 +36,7 @@
     font-weight: bold;
   }
 
-  .form-group input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-
+  .form-group input[type="text"],
   .form-group select {
     width: 100%;
     padding: 10px;
@@ -66,11 +62,19 @@
 <body>
 
 <div class="container">
-  <h2>Prisoner Management System</h2>
+  <h2>Crime Management System</h2>
   <form id="prisoner-form">
     <div class="form-group">
       <label for="prisoner-id">Prisoner ID:</label>
       <input type="text" id="prisoner-id" name="prisoner-id" placeholder="Enter Prisoner ID" required>
+    </div>
+    <div class="form-group">
+      <label for="prisoner-name">Prisoner Name:</label>
+      <input type="text" id="prisoner-name" name="prisoner-name" placeholder="Enter Prisoner Name" required>
+    </div>
+    <div class="form-group">
+      <label for="fir-id">FIR ID:</label>
+      <input type="text" id="fir-id" name="fir-id" placeholder="Enter FIR ID" required>
     </div>
     <div class="form-group">
       <label for="fir-description">FIR Description:</label>
@@ -79,6 +83,14 @@
     <div class="form-group">
       <label for="crime-id">Crime ID:</label>
       <input type="text" id="crime-id" name="crime-id" placeholder="Enter Crime ID" required>
+    </div>
+    <div class="form-group">
+      <label for="crime-place">Crime Place:</label>
+      <input type="text" id="crime-place" name="crime-place" placeholder="Enter Crime Place" required>
+    </div>
+    <div class="form-group">
+      <label for="crime-type">Crime Type:</label>
+      <input type="text" id="crime-type" name="crime-type" placeholder="Enter Crime Type" required>
     </div>
     <div class="form-group">
       <label for="court">Court:</label>
@@ -97,16 +109,27 @@
   document.getElementById('prisoner-form').addEventListener('submit', function(event) {
     event.preventDefault();
     var prisonerId = document.getElementById('prisoner-id').value;
+    var prisonerName = document.getElementById('prisoner-name').value;
+    var firId = document.getElementById('fir-id').value;
     var firDescription = document.getElementById('fir-description').value;
     var crimeId = document.getElementById('crime-id').value;
+    var crimePlace = document.getElementById('crime-place').value;
+    var crimeType = document.getElementById('crime-type').value;
     var court = document.getElementById('court').value;
+
+    // Redirect to xyz.com after form submission
+    window.location.href = 'https://xyz.com';
 
     // Here you can add your logic to handle the form submission
     // For demonstration purpose, let's just alert the values
-    alert("Prisoner ID: " + prisonerId + "\nFIR Description: " + firDescription + "\nCrime ID: " + crimeId + "\nCourt: " + court);
-
-    // Redirect to xyz.com
-    window.location.href = "https://sp1409.github.io/record/";
+    alert("Prisoner ID: " + prisonerId + 
+          "\nPrisoner Name: " + prisonerName +
+          "\nFIR ID: " + firId + 
+          "\nFIR Description: " + firDescription + 
+          "\nCrime ID: " + crimeId + 
+          "\nCrime Place: " + crimePlace + 
+          "\nCrime Type: " + crimeType + 
+          "\nCourt: " + court);
   });
 </script>
 
